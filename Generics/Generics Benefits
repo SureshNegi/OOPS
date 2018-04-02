@@ -1,0 +1,7 @@
+Generics in .NET let you :
+reuse code and the effort you put into implementing it. 
+The types and internal data can change without causing code bloat, regardless of whether you are using value or reference types.
+Because the generic code does not force the boxing and unboxing of value types, 
+or the down casting of reference types, performance is greatly improved.
+With value types there is typically a 200 percent performance gain, and with reference types you can expect up to a 100 percent performance gain in accessing the type
+(of course, the application as a whole may or may not experience any performance improvements). 
