@@ -1,0 +1,36 @@
+https://msdn.microsoft.com/en-us/library/ms379564(v=vs.80).aspx
+We can implement Stac using object type to use it as generic(accept any type value)
+Disadvantage:boxing,unboxing and performance.Error porne
+Stack stack = new Stack();
+stack.Push(1);
+//This compiles, but is not type safe, and will throw an exception: 
+string number = (string)stack.Pop();
+
+the above code is compiled but will give run time error.
+
+Other Way:implement seprate stac for each type :IntStac,strinStac
+Disadvantage:
+repeatetive,low productivity ,if changes- change more than one place
+
+Using Genrics:
+Generics allow you to define type-safe classes without compromising type safety, performance, or productivity. 
+you implement the server only once as a generic server, while at the same time you can declare and use it with any type.
+
+To do that, use the < and > brackets, enclosing a generic type parameter. For example, here is how you define and use a generic stack:
+public class Stack<T>
+{
+   T[] m_Items; 
+   public void Push(T item)
+   {...}
+   public T Pop()
+   {...}
+}
+Stack<int> stack = new Stack<int>();
+stack.Push(1);
+stack.Push(2);
+int number = stack.Pop();
+
+When using a generic stack, you have to instruct the compiler which type to use instead of the generic type parameter T, both when declaring the variable and when instantiating it:
+Stack<int> stack = new Stack<int>();
+The compiler and the runtime do the rest. 
+All the methods (or properties) that accept or return a T will instead use the specified type, an integer in the example above.
