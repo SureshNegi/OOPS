@@ -1,0 +1,13 @@
+With C# generics, the compiler compiles the generic code into IL independent of any type arguments that the clients will use. 
+As a result, the generic code could try to use methods, properties, or members of the generic type parameters that are incompatible with 
+the specific type arguments the client uses. This is unacceptable because it amounts to lack of type safety. In C# you need to instruct
+the compiler which constraints the client-specified types must obey in order for them to be used instead of the generic type parameters.
+
+There are three types of constraints.
+A derivation constraint indicates to the compiler that the generic type parameter derives from a 
+base type such an interface or a particular base class. 
+A default constructor constraint indicates to the compiler that the generic type parameter exposes a default public constructor
+(public constructor with no parameters).
+A reference/value type constraint constrains the generic type parameter to be a reference or a value type.
+A generic type can employ multiple constraints, and you even get IntelliSense
+reflecting the constraints when using the generic type parameter, such as suggesting methods or members from the base type.
