@@ -1,0 +1,36 @@
+As we have seen class Stack<T>{}  Here T can be any thing but once intiantiated to particular type this will hold only that type value
+For example:
+class Node<K,T>
+{
+   public K Key;
+   public T Item;
+   public Node<K,T> NextNode;
+   public Node()
+   {
+      Key      = default(K);
+      Item     = defualt(T);
+      NextNode = null;
+   }
+   public Node(K key,T item,Node<K,T> nextNode)
+   {
+      Key      = key;
+      Item     = item;
+      NextNode = nextNode;
+   }
+}
+
+public class LinkedList<K,T>
+{
+   Node<K,T> m_Head;
+   public LinkedList()
+   {
+      m_Head = new Node<K,T>();
+   }
+   public void AddHead(K key,T item)
+   {
+      Node<K,T> newNode = new Node<K,T>(key,item,m_Head.NextNode);
+      m_Head.NextNode = newNode;
+   }
+}
+LinkedList<int,string> list = new LinkedList<int,string>();
+list.AddHead(123,"AAA");
