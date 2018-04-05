@@ -1,3 +1,4 @@
+http://www.dotnetfunda.com/articles/show/3003/generic-constraints-with-examples-in-csharp
 With C# generics, the compiler compiles the generic code into IL independent of any type arguments that the clients will use. 
 As a result, the generic code could try to use methods, properties, or members of the generic type parameters that are incompatible with 
 the specific type arguments the client uses. This is unacceptable because it amounts to lack of type safety. In C# you need to instruct
